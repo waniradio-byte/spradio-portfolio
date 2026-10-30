@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- ① タイトルと説明文: 検索結果やSNS共有で表示されます。肩書きと得意分野を入れてください -->
+<title>Spradio | アニメーション志望の3Dキャラクター・背景アーティスト</title>
+<meta name="description" content="アニメーション制作を目指す3Dキャラクター/背景アーティスト。モデリング、リグ、アニメーションまで。ポートフォリオ。">
+<meta property="og:title" content="Spradio | 3Dアーティスト ポートフォリオ">
+<meta property="og:description" content="Make it pop. Then make it move. 3Dキャラクター・背景のモデリング、リグ、アニメーション。">
+<meta property="og:type" content="website">
+<!-- <meta property="og:image" content="https://（公開URL）/images/ogp.jpg"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#eef2f6; --surface:#ffffff; --ink:#14213d; --sub:#4a5872; --line:#cdd6e2;
+  --skin-a:#ff4d6d;   /* オニオンスキンの赤 */
+  --skin-b:#2f6bff;   /* オニオンスキンの青 */
+  --font:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#0f1626; --surface:#18223a; --ink:#eaf0fb; --sub:#a4b1c9; --line:#2b3855; --skin-a:#ff6b86; --skin-b:#6c97ff;}
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:var(--font);background:var(--paper);color:var(--ink);line-height:1.8;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--skin-b);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:88px 0}
+h2{font-size:clamp(26px,4vw,36px);font-weight:900;line-height:1.3;margin-bottom:12px}
+.lead{color:var(--sub);max-width:36em;margin-bottom:40px}
+
+/* ヘッダー */
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.logo{font-weight:900;text-decoration:none;letter-spacing:.04em}
+nav{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:500}
+nav a{text-decoration:none;color:var(--sub)}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-block;background:var(--ink);color:var(--paper);padding:10px 22px;border-radius:4px;font-weight:700;text-decoration:none;font-size:15px}
+nav .btn{color:var(--paper);padding:7px 16px;font-size:14px}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+@media(max-width:620px){nav a:not(.btn){display:none}}
+
+/* ヒーロー */
+.hero{padding:72px 0 64px}
+.hero h1{position:relative;font-size:clamp(34px,7vw,68px);font-weight:900;line-height:1.2;margin-bottom:20px;isolation:isolate}
+.hero h1::before,.hero h1::after{content:attr(data-text);position:absolute;inset:0;z-index:-1;pointer-events:none}
+.hero h1::before{color:var(--skin-a);opacity:.45;animation:ghostA 1.6s .2s cubic-bezier(.2,.8,.2,1) both}
+.hero h1::after{color:var(--skin-b);opacity:.45;animation:ghostB 1.6s .2s cubic-bezier(.2,.8,.2,1) both}
+@keyframes ghostA{from{transform:translate(-26px,-6px)}to{transform:translate(-4px,-2px)}}
+@keyframes ghostB{from{transform:translate(26px,6px)}to{transform:translate(4px,2px)}}
+.hero p.sub{font-size:clamp(16px,2vw,19px);color:var(--sub);max-width:34em;margin-bottom:28px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:44px}
+.reel{aspect-ratio:16/9;background:linear-gradient(135deg,var(--ink),#2a3d6e);border-radius:6px;overflow:hidden;display:grid;place-items:center;color:#fff;font-size:14px;text-align:center;padding:20px}
+.reel iframe{width:100%;height:100%;border:0}
+
+/* 作品 */
+.works{display:grid;gap:28px}
+.work{display:grid;grid-template-columns:1.5fr 1fr;gap:28px;align-items:center;background:var(--surface);border:1px solid var(--line);padding:16px;border-radius:6px}
+.work:nth-child(even){grid-template-columns:1fr 1.5fr}
+.work:nth-child(even) .thumb{order:2}
+.thumb{position:relative;aspect-ratio:16/9;border-radius:4px;overflow:hidden;background:repeating-linear-gradient(45deg,var(--line) 0 10px,transparent 10px 20px),var(--paper);display:grid;place-items:center;color:var(--sub);font-size:13px}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.work h3{font-size:22px;font-weight:700;margin-bottom:6px}
+.work p{color:var(--sub);font-size:15px;margin-bottom:14px}
+dl.meta{display:grid;grid-template-columns:5em 1fr;gap:6px 12px;font-size:14px;border-top:1px solid var(--line);padding-top:12px}
+dl.meta dt{color:var(--sub)}
+dl.meta dd{font-weight:500}
+@media(max-width:760px){.work,.work:nth-child(even){grid-template-columns:1fr}.work:nth-child(even) .thumb{order:0}}
+
+/* スキル */
+.tools{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0}
+.tools li{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:8px 16px;font-weight:500}
+
+/* 2D */
+.twoD{background:var(--surface);border-block:1px solid var(--line)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:12px}
+.grid3 .thumb{aspect-ratio:1/1}
+.group-title{font-weight:700;margin:28px 0 12px}
+@media(max-width:620px){.grid3{grid-template-columns:repeat(2,1fr)}}
+
+/* About */
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:40px}
+.about dl{display:grid;grid-template-columns:7em 1fr;gap:10px 14px;font-size:15px}
+.about dt{color:var(--sub)}
+@media(max-width:760px){.about{grid-template-columns:1fr}}
+
+/* Contact */
+.contact{text-align:center}
+.contact .lead{margin-inline:auto}
+.contact .actions{justify-content:center;margin-bottom:24px}
+.links{display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+footer{padding:28px 0;text-align:center;color:var(--sub);font-size:13px;border-top:1px solid var(--line)}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero h1::before,.hero h1::after{animation:none;transform:translate(-4px,-2px)}
+  .hero h1::after{transform:translate(4px,2px)}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">Spradio</a>
+    <nav aria-label="メインメニュー">
+      <a href="#works">3D作品</a>
+      <a href="#2d">2D</a>
+      <a href="#about">プロフィール</a>
+      <a class="btn" href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ② ファーストビュー: 肩書きと強みを一文で。リール動画は30〜60秒 -->
+<section class="hero">
+  <div class="wrap">
+    <h1 data-text="Make it pop. Then make it move.">Make it pop. Then make it move.</h1>
+    <p class="sub">アニメーション制作を目指す、3Dキャラクター・背景アーティスト。モデリングからリグ、アニメーションまで一貫して制作しています。</p>
+    <div class="actions">
+      <a class="btn" href="#works">代表作を見る</a>
+      <a class="btn ghost" href="resume.pdf">履歴書・職務経歴書(PDF)</a>
+    </div>
+    <!-- デモリール: 下のdivを削除し、コメントのiframeを有効にしてURLを差し替えてください
+    <div class="reel"><iframe src="https://www.youtube.com/embed/動画ID" title="デモリール" allowfullscreen loading="lazy"></iframe></div>
+    -->
+    <div class="reel">ここにデモリール動画(YouTube / Vimeo)を入れます</div>
+  </div>
+</section>
+
+<!-- ③ 代表作: 3〜6点。各作品に「役割・ツール・期間」を必ず添える -->
+<section id="works">
+  <div class="wrap">
+    <h2>3D作品</h2>
+    <p class="lead">キャラクターと背景、それぞれの代表作です。担当範囲と使用ツールを添えています。</p>
+    <div class="works">
+
+      <article class="work">
+        <figure class="thumb">作品画像 16:9<img src="images/work1.jpg" alt="作品1: 作品名(説明を入れる)" onerror="this.remove()"></figure>
+        <div>
+          <h3>作品名1</h3>
+          <p>一言で作品の狙いを書く。例: 表情の変化が映えるよう、顔のトポロジーを設計した3Dキャラクター。</p>
+          <dl class="meta"><dt>担当</dt><dd>モデリング / リグ / アニメーション</dd><dt>ツール</dt><dd>Maya, ZBrush, Substance Painter</dd><dt>期間</dt><dd>2か月</dd></dl>
+        </div>
+      </article>
+
+      <article class="work">
+        <figure class="thumb">作品画像 16:9<img src="images/work2.jpg" alt="作品2: 作品名(説明を入れる)" onerror="this.remove()"></figure>
+        <div>
+          <h3>作品名2</h3>
+          <p>一言で作品の狙いを書く。例: 2Dの背景美術を3Dで再構築した、アニメ調のルック。</p>
+          <dl class="meta"><dt>担当</dt><dd>背景モデリング / ライティング</dd><dt>ツール</dt><dd>Blender</dd><dt>期間</dt><dd>1か月</dd></dl>
+        </div>
+      </article>
+
+      <article class="work">
+        <figure class="thumb">作品画像 16:9<img src="images/work3.jpg" alt="作品3: 作品名(説明を入れる)" onerror="this.remove()"></figure>
+        <div>
+          <h3>作品名3</h3>
+          <p>一言で作品の狙いを書く。例: 歩きとジャンプのアニメーション練習。タメとツメを意識。</p>
+          <dl class="meta"><dt>担当</dt><dd>アニメーション</dd><dt>ツール</dt><dd>Maya</dd><dt>期間</dt><dd>3週間</dd></dl>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ④ ツール -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>使用ツール</h2>
+    <ul class="tools">
+      <li>Maya</li><li>Blender</li><li>ZBrush</li><li>Substance Painter</li><li>Photoshop</li><li>Clip Studio Paint</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ⑤ 2D: 幅の広さを示す補強。各4〜6枚まで -->
+<section id="2d" class="twoD">
+  <div class="wrap">
+    <h2>2Dもできます</h2>
+    <p class="lead">キャラクターデザインと背景美術。立体を意識した設計が、3Dの制作にもつながっています。</p>
+
+    <p class="group-title">キャラクターデザイン</p>
+    <div class="grid3">
+      <figure class="thumb">1:1<img src="images/chara1.jpg" alt="キャラクターデザイン1" onerror="this.remove()"></figure>
+      <figure class="thumb">1:1<img src="images/chara2.jpg" alt="キャラクターデザイン2" onerror="this.remove()"></figure>
+      <figure class="thumb">1:1<img src="images/chara3.jpg" alt="キャラクターデザイン3" onerror="this.remove()"></figure>
+    </div>
+
+    <p class="group-title">背景</p>
+    <div class="grid3">
+      <figure class="thumb">1:1<img src="images/bg1.jpg" alt="背景1" onerror="this.remove()"></figure>
+      <figure class="thumb">1:1<img src="images/bg2.jpg" alt="背景2" onerror="this.remove()"></figure>
+      <figure class="thumb">1:1<img src="images/bg3.jpg" alt="背景3" onerror="this.remove()"></figure>
+    </div>
+
+    <!-- 2D作品の全点を見せたいときは、ArtStationなど外部ページのURLに差し替え -->
+    <p style="margin-top:24px"><a class="btn ghost" href="https://www.artstation.com/">2D作品をもっと見る</a></p>
+  </div>
+</section>
+
+<!-- ⑥ プロフィール -->
+<section id="about">
+  <div class="wrap">
+    <h2>プロフィール</h2>
+    <div class="about">
+      <p>ここに短い自己紹介を書きます(3〜4文)。何を学び、どんな作品を作ってきたか、アニメーション制作でどう貢献したいかを、具体的に。</p>
+      <dl>
+        <dt>2024</dt><dd>○○専門学校 卒業</dd>
+        <dt>2025</dt><dd>○○株式会社 3Dアーティスト</dd>
+        <dt>得意</dt><dd>キャラクターモデリング、背景モデリング</dd>
+        <dt>対応</dt><dd>正社員 / 契約 / 業務委託</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ⑦ お問い合わせ: 連絡手段は1つに絞る -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>お仕事のご相談</h2>
+    <p class="lead">採用のご相談、制作のご依頼など、お気軽にご連絡ください。</p>
+    <div class="actions"><a class="btn" href="mailto:your-address@example.com">メールを送る</a></div>
+    <div class="links">
+      <a href="https://www.artstation.com/">ArtStation</a>
+      <a href="https://x.com/">X</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>© 2026 Spradio</footer>
+
+</body>
+</html>
